@@ -1,4 +1,4 @@
-# ddc-source-cmdline-history
+# ddc-source-cmdline_history
 
 Command history completion for ddc.vim
 
@@ -18,9 +18,9 @@ https://github.com/Shougo/ddc.vim
 ## Configuration
 
 ```vim
-call ddc#custom#patch_global('sources', ['cmdline-history'])
+call ddc#custom#patch_global('sources', ['cmdline_history'])
 
 call ddc#custom#patch_global('sourceOptions', #{
-      \   cmdline-history: #{ mark: 'history' },
+      \   cmdline_history: #{ mark: 'history' },
       \ })
 ```
