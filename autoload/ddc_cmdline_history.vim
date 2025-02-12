@@ -1,8 +1,21 @@
 function! ddc_cmdline_history#get(max) abort
-  let type = getcmdtype()
-  let max = min([a:max, histnr(type)])
+  const type = getcmdtype()
+  const max = [a:max, type->histnr()]->min()
   if max < 1
     return []
   endif
-  return map(range(1, max), { _, val -> histget(type, -val) })
+
+  let histories = range(1, max)->map({ _, val -> type->histget(-val) })
+
+  " Filter
+  const compltype = getcmdcompltype()
+  if compltype ==# 'dir'
+    let histories = histories
+          \ ->filter({ _, val -> val->isdirectory() })
+  elseif compltype ==# 'file'
+    let histories = histories
+          \ ->filter({ _, val -> val->isdirectory() || val->filereadable() })
+  endif
+
+  return histories
 endfunction

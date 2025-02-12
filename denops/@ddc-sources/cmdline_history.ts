@@ -3,8 +3,8 @@ import {
   type DdcOptions,
   type Item,
   type SourceOptions,
-} from "jsr:@shougo/ddc-vim@~7.0.0/types";
-import { BaseSource } from "jsr:@shougo/ddc-vim@~7.0.0/source";
+} from "jsr:@shougo/ddc-vim@~9.1.0/types";
+import { BaseSource } from "jsr:@shougo/ddc-vim@~9.1.0/source";
 
 import type { Denops } from "jsr:@denops/core@~7.0.0";
 
