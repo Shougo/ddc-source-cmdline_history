@@ -1,0 +1,45 @@
+*ddc-filter-sorter-cmdline_history.txt*	cmdline history sorter for ddc.vim
+
+Author: Shougo <Shougo.Matsu at gmail.com>
+License: MIT license
+
+CONTENTS            *ddc-filter-sorter_filter-sorter_cmdline_history-contents*
+
+Introduction		|ddc-filter-sorter_cmdline_history_introduction|
+Install			|ddc-filter-sorter_cmdline_history_install|
+Params			|ddc-filter-sorter_cmdline_history_params|
+Examples		|ddc-filter-sorter_cmdline_history_examples|
+
+
+==============================================================================
+INTRODUCTION                  *ddc-filter-sorter_cmdline_history-introduction*
+
+This sorter sorts items by cmdline history file.
+
+
+==============================================================================
+INSTALL                            *ddc-filter-sorter_cmdline_history-install*
+
+Please install both "ddc.vim" and "denops.vim".
+
+https://github.com/Shougo/ddc.vim
+https://github.com/vim-denops/denops.vim
+
+
+==============================================================================
+PARAMS                              *ddc-filter-sorter_cmdline_history-params*
+
+                               *ddc-filter-sorter_cmdline_history-param-limit*
+limit		(number)
+		The limit of history lines.
+
+		Default: 500
+
+==============================================================================
+EXAMPLES                          *ddc-filter-sorter_cmdline_history-examples*
+>vim
+	call ddc#custom#patch_global('sorters', ['sorter_cmdline_history'])
+<
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:

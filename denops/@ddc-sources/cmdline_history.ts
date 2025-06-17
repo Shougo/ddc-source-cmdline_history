@@ -3,13 +3,13 @@ import {
   type DdcOptions,
   type Item,
   type SourceOptions,
-} from "jsr:@shougo/ddc-vim@~9.1.0/types";
-import { BaseSource } from "jsr:@shougo/ddc-vim@~9.1.0/source";
+} from "jsr:@shougo/ddc-vim@~9.5.0/types";
+import { BaseSource } from "jsr:@shougo/ddc-vim@~9.5.0/source";
 
 import type { Denops } from "jsr:@denops/core@~7.0.0";
 
 type Params = {
-  maxSize: number;
+  limit: number;
 };
 
 export class Source extends BaseSource<Params> {
@@ -21,10 +21,9 @@ export class Source extends BaseSource<Params> {
     sourceParams: Params;
     completeStr: string;
   }): Promise<Item[]> {
-    const maxSize = args.sourceParams.maxSize;
     const histories = await args.denops.call(
       "ddc_cmdline_history#get",
-      maxSize,
+      args.sourceParams.limit,
     ) as string[];
 
     if (args.context.input.indexOf(" ") < 0) {
@@ -44,7 +43,7 @@ export class Source extends BaseSource<Params> {
 
   override params(): Params {
     return {
-      maxSize: 1000,
+      limit: 1000,
     };
   }
 }

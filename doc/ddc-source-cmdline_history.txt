@@ -26,9 +26,18 @@ https://github.com/vim-denops/denops.vim
 
 
 ==============================================================================
+PARAMS                                     *ddc-source-cmdline_history-params*
+
+                                      *ddc-source-cmdline_history-param-limit*
+limit		(number)
+		The limit of history lines.
+
+		Default: 500
+
+==============================================================================
 EXAMPLES				*ddc-source-cmdline_history-examples*
->
-	call ddc#custom#patch_global('sources', ['cmdline'])
+>vim
+	call ddc#custom#patch_global('sources', ['cmdline_history'])
 	
 	call ddc#custom#patch_global(sourceOptions, #{
 	      \   cmdline_history: #{ mark: 'history' },

@@ -19,6 +19,7 @@ https://github.com/Shougo/ddc.vim
 
 ```vim
 call ddc#custom#patch_global('sources', ['cmdline_history'])
+call ddc#custom#patch_global('sorters', ['sorter_cmdline_history'])
 
 call ddc#custom#patch_global('sourceOptions', #{
       \   cmdline_history: #{ mark: 'history' },
