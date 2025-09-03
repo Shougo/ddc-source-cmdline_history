@@ -1,9 +1,9 @@
-import { type Item } from "jsr:@shougo/ddc-vim@~9.5.0/types";
-import { BaseFilter } from "jsr:@shougo/ddc-vim@~9.5.0/filter";
+import type { Item } from "@shougo/ddc-vim/types";
+import { BaseFilter } from "@shougo/ddc-vim/filter";
 
-import type { Denops } from "jsr:@denops/core@~7.0.0";
+import type { Denops } from "@denops/std";
 
-import { assertEquals } from "jsr:@std/assert@~1.0.3/equals";
+import { assertEquals } from "@std/assert/equals";
 
 type Params = {
   limit: number;
